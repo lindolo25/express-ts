@@ -2,20 +2,21 @@
 "use strict";
 
 //module dependencies.
-import app from "../app";
+import app from "./app";
 import http from "http";
 import dotEnv from "dotenv";
+import { AddressInfo } from "net";
 let debug = require("debug")("express:server");
 
 // configure environment.
 dotEnv.config();
 
 //get port from environment and store in Express.
-var port = normalizePort(process.env.PORT || 3000);
+let port: any = normalizePort(process.env.PORT || 3000);
 app.set("port", port);
 
 //create http server
-var server = http.createServer(app);
+let server: http.Server = http.createServer(app);
 
 //listen on provided ports
 server.listen(port);
@@ -30,7 +31,7 @@ server.on("listening", onListening);
  * Normalize a port into a number, string, or false.
  */
 function normalizePort(val: any) {
-    var port = parseInt(val, 10);
+    let port = parseInt(val, 10);
 
     if (isNaN(port)) {
         // named pipe
@@ -53,7 +54,7 @@ function onError(error: any) {
         throw error;
     }
 
-    var bind = typeof port === "string"
+    let bind: string = typeof port === "string"
         ? "Pipe " + port
         : "Port " + port;
 
@@ -76,8 +77,8 @@ function onError(error: any) {
  * Event listener for HTTP server "listening" event.
  */
 function onListening() {
-    var addr = server.address();
-    var bind = typeof addr === "string"
+    let addr: any = server.address();
+    let bind: string = typeof addr === "string"
         ? "pipe " + addr
         : "port " + addr.port;
     debug("Listening on " + bind);
