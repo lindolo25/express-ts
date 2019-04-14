@@ -2,12 +2,14 @@
 "use strict";
 
 //module dependencies.
-var app = require("../app");
-var debug = require("debug")("express:server");
-var http = require("http");
+import app from "../app";
+import http from "http";
 import dotEnv from "dotenv";
+let debug = require("debug")("express:server");
 
+// configure environment.
 dotEnv.config();
+
 //get port from environment and store in Express.
 var port = normalizePort(process.env.PORT || 3000);
 app.set("port", port);

@@ -16,18 +16,6 @@ class Server {
     public app: express.Application;
 
     /**
-     * Bootstrap the application.
-     *
-     * @class Server
-     * @method bootstrap
-     * @static
-     * @return {ng.auto.IInjectorService} Returns the newly created injector for this app.
-     */
-    public static bootstrap(): Server {
-        return new Server();
-    }
-
-    /**
      * Constructor.
      *
      * @class Server
