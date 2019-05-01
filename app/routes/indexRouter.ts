@@ -5,7 +5,7 @@ import * as indexRoute from "../controllers/indexController";
 let router: express.Router = express.Router();
 
 //create routes
-var index: indexRoute.Index = new indexRoute.Index();
+let index: indexRoute.Index = new indexRoute.Index();
 
 //home page
 router.get("/", index.index.bind(index.index));
