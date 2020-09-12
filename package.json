@@ -4,7 +4,7 @@
 	"description": "",
 	"scripts": {
 		"tsc": "tsc",
-		"dev": "ts-node-dev --respawn --transpileOnly ./app/server.ts",
+		"dev": "ts-node-dev --respawn ./app/server.ts --transpileOnly",
 		"prod": "tsc && node ./build/server.js",
 		"build": "tsc --build"
 	},
@@ -18,7 +18,7 @@
 		"express": "^4.16.4",
 		"i": "^0.3.6",
 		"morgan": "^1.9.1",
-		"ts-node-dev": "^1.0.0-pre.40",
+		"ts-node-dev": "^1.0.0-pre.62",
 		"tslint": "^5.15.0",
 		"typescript": "^3.4.3"
 	}
